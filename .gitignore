@@ -1,0 +1,15 @@
+# Configuration files (customize per environment)
+konfig.h
+
+# Build artifacts
+build/
+*.o
+*.a
+*.so
+*.out
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
