@@ -152,6 +152,8 @@ public:
     
     
     /* --------------------------------------------- Basic Matrix Class functions --------------------------------------------- */
+    /* Default constructor: creates an invalid matrix (for use with std::optional, etc.) */
+    Matrix(void);
     /* Init empty matrix size _i16row x _i16col */
     Matrix(const int16_t _i16row, const int16_t _i16col, const InitZero _init = InitMatWithZero);
     /* Init matrix size _i16row x _i16col with entries initData */
@@ -305,6 +307,11 @@ inline Matrix MatIdentity(const int16_t _i16size);
 
 /* ------------------------------------------ Basic Matrix Class functions ------------------------------------------ */
 /* ------------------------------------------ Basic Matrix Class functions ------------------------------------------ */
+
+inline Matrix::Matrix(void) {
+    this->i16row = -1;
+    this->i16col = -1;
+}
 
 inline Matrix::Matrix(const int16_t _i16row, const int16_t _i16col, const InitZero _init) {
     this->i16row = _i16row;

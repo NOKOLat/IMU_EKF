@@ -13,6 +13,9 @@
 class EKF
 {
 public:
+    /* Default constructor: creates an uninitialized EKF (for use with std::optional, etc.) */
+    EKF() : bNonlinearUpdateX(nullptr), bNonlinearUpdateY(nullptr),
+            bCalcJacobianF(nullptr), bCalcJacobianH(nullptr) {}
     EKF(const Matrix& XInit, const Matrix& P, const Matrix& Q, const Matrix& R,
         bool (*bNonlinearUpdateX)(Matrix&, const Matrix&, const Matrix&),
         bool (*bNonlinearUpdateY)(Matrix&, const Matrix&, const Matrix&), 
